@@ -1,37 +1,33 @@
 # Altri Medical Ltd
 
-> Doctor-led aesthetics clinic in Altrincham, Cheshire, UK.
+> Doctor-led aesthetics clinic in Altrincham, Cheshire, UK. All treatments performed by GMC-registered doctors.
 
-## Business
-- Name: Altri Medical Ltd
-- Type: Doctor-led aesthetics & medical wellness clinic
-- Location: 35a Stamford New Road, Altrincham, WA14 1EB
+## Treatments
+- Thread Lifts
+- Anti-Wrinkle Injections (Botox)
+- Dermal Fillers
+- Dimpleplasty
+- Polynucleotides
+- PRP Hair Rejuvenation
+- Joint PRP
+- Mole & Lump Removal
+- IV Drip Therapy
+- Weight Loss (Mounjaro, Ozempic)
+- Private Blood Tests
+- Private Doctor Consultation
+- Sexual Wellness (P-Shot, O-Shot)
+
+## Contact
 - Phone: 0161 531 7727
 - Email: altrimedical@gmail.com
-- Hours: Mon–Fri 9am–6pm, Sat 9am–2pm
+- Address: 35a Stamford New Road, Altrincham, WA14 1EB
+- Hours: Mon-Fri 9am-6pm, Sat 9am-2pm
 
-## Services
-- Aesthetics: Thread Lifts, Anti-Wrinkle Injections, Dermal Fillers, Dimpleplasty, Polynucleotides
-- Regenerative: PRP Hair Rejuvenation, Joint PRP
-- Minor Surgery: Mole & Lump Removal
-- Wellness: Private Blood Tests, IV Drip Therapy, Private Doctor Consultation
-- Sexual Wellness: P-Shot (Men), O-Shot (Women)
-- Weight Management: Weight Loss Consultation (Mounjaro, Ozempic)
+## Doctors
+- Dr Abad — Lead Aesthetic Doctor, 10+ years NHS experience
+- Mr Sam Taktak — Consultant Urological Surgeon, Stockport NHS Foundation Trust
 
-## Medical Team
-- Dr Abad — Lead Aesthetic Doctor. GMC-registered. 10+ years NHS experience across 22+ hospitals. MD with distinction from Semmelweis University.
-- Mr Sam Taktak — Consultant Urological Surgeon. MBBS, PGDip Urology (Distinction). Royal College of Surgeons accredited faculty member.
-
-## Differentiators
-- All treatments performed by GMC-registered doctors (not technicians)
-- NHS-trained with surgical and emergency backgrounds
-- Evidence-based, natural-looking results
-- Confidential 1-to-1 consultations
-- Serving Altrincham and wider Cheshire
-
-## Pages
-- / (homepage)
-- /privacy.html (privacy policy)
-
-## Sitemap
-- https://www.altrimedical.co.uk/sitemap.xml
+## Key Pages
+- Homepage: https://www.altrimedical.co.uk/
+- Treatments: https://www.altrimedical.co.uk/treatments/
+- Blog: https://www.altrimedical.co.uk/blog.html

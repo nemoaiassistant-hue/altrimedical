@@ -33,7 +33,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalClinic",
+    "@type": ["MedicalClinic", "LocalBusiness"],
     "@id": "https://www.altrimedical.co.uk/#clinic",
     "name": "Altri Medical Ltd",
     "description": "Doctor-led aesthetics clinic in Altrincham offering evidence-based aesthetic, regenerative, and wellness treatments performed exclusively by GMC-registered doctors.",
@@ -68,6 +68,23 @@
       }
     ],
     "priceRange": "££",
+    "image": "https://www.altrimedical.co.uk/",
+    "areaServed": [
+      {"@type": "City", "name": "Altrincham"},
+      {"@type": "City", "name": "Sale"},
+      {"@type": "City", "name": "Hale"},
+      {"@type": "City", "name": "Hale Barns"},
+      {"@type": "City", "name": "Bowdon"},
+      {"@type": "City", "name": "Timperley"},
+      {"@type": "City", "name": "Wilmslow"},
+      {"@type": "City", "name": "Knutsford"},
+      {"@type": "City", "name": "Lymm"},
+      {"@type": "City", "name": "Cheadle"},
+      {"@type": "City", "name": "Stockport"},
+      {"@type": "City", "name": "Manchester"},
+      {"@type": "AdministrativeArea", "name": "Cheshire"},
+      {"@type": "AdministrativeArea", "name": "Greater Manchester"}
+    ],
     "medicalSpecialty": ["Aesthetic", "RegenerativeMedicine", "Urology"],
     "availableService": [
       { "@type": "MedicalProcedure", "name": "Thread Lifts" },
@@ -167,39 +184,6 @@
   <!-- Skip Link -->
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- ===== NAVBAR ===== -->
-  <header id="navbar" class="navbar">
-    <div class="nav-container">
-      <a href="#main" class="nav-logo" aria-label="Altri Medical — Home">
-        <svg class="logo-mark" viewBox="0 0 100 100" width="40" height="40" aria-hidden="true">
-          <rect width="100" height="100" rx="22" fill="#0d5c5c"/>
-          <text x="50" y="70" font-size="56" font-family="Georgia, serif" fill="#c9a96a" text-anchor="middle">A</text>
-        </svg>
-        <span class="logo-text">Altri Medical</span>
-      </a>
-
-      <nav class="nav-menu" id="nav-menu" aria-label="Primary navigation">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#doctors">Our Doctors</a>
-        <a href="#testimonials">Reviews</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="nav-actions">
-        <a href="tel:01615317727" class="nav-phone" aria-label="Call us">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>0161 531 7727</span>
-        </a>
-        <a href="#contact" class="btn btn-gold btn-sm">Book Consultation</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </header>
 
   <main id="main">
     <!-- ===== HERO ===== -->
@@ -319,150 +303,150 @@
 
         <div class="services-grid">
           <!-- Aesthetics -->
-          <a href="#contact" class="service-card fade-in">
+          <a href="treatments/thread-lifts.html" class="service-card fade-in">
             <div class="service-image">
               <img src="https://images.pexels.com/photos/5177995/pexels-photo-5177995.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Thread lift treatment" loading="lazy">
               <div class="service-overlay"></div>
               <span class="service-tag">Aesthetics</span>
             </div>
             <div class="service-body">
-              <h3>Thread Lifts</h3>
+              
               <p>A minimally invasive procedure designed to lift, tighten and rejuvenate facial contours.</p>
             </div>
           </a>
 
-          <a href="#contact" class="service-card fade-in">
+          <a href="treatments/anti-wrinkle-injections.html" class="service-card fade-in">
             <div class="service-image">
               <img src="https://images.pexels.com/photos/16131210/pexels-photo-16131210.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Anti-wrinkle injections" loading="lazy">
               <div class="service-overlay"></div>
               <span class="service-tag">Aesthetics</span>
             </div>
             <div class="service-body">
-              <h3>Anti-Wrinkle Injections</h3>
+              
               <p>Restore a smoother, refreshed appearance with clinically delivered wrinkle-reducing treatments.</p>
             </div>
           </a>
 
-          <a href="#contact" class="service-card fade-in">
+          <a href="treatments/dermal-fillers.html" class="service-card fade-in">
             <div class="service-image">
               <img src="https://images.pexels.com/photos/7446679/pexels-photo-7446679.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dermal fillers" loading="lazy">
               <div class="service-overlay"></div>
               <span class="service-tag">Aesthetics</span>
             </div>
             <div class="service-body">
-              <h3>Dermal Fillers</h3>
+              
               <p>Enhance definition, volume and symmetry using safe, premium filler products administered by a doctor.</p>
             </div>
           </a>
 
-          <a href="#contact" class="service-card fade-in">
+          <a href="treatments/dimpleplasty.html" class="service-card fade-in">
             <div class="service-image">
               <img src="https://images.pexels.com/photos/7446659/pexels-photo-7446659.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dimpleplasty procedure" loading="lazy">
               <div class="service-overlay"></div>
               <span class="service-tag">Aesthetics</span>
             </div>
             <div class="service-body">
-              <h3>Dimpleplasty</h3>
+              
               <p>A precise minor surgical procedure performed to create natural-looking dimples.</p>
             </div>
           </a>
 
-          <a href="#contact" class="service-card fade-in">
+          <a href="treatments/polynucleotides.html" class="service-card fade-in">
             <div class="service-image">
               <img src="https://images.pexels.com/photos/7581583/pexels-photo-7581583.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Polynucleotide skin treatment" loading="lazy">
               <div class="service-overlay"></div>
               <span class="service-tag">Aesthetics</span>
             </div>
             <div class="service-body">
-              <h3>Polynucleotides</h3>
+              
               <p>Skin regenerative treatments that improve hydration, elasticity and repair at a cellular level.</p>
             </div>
           </a>
 
           <!-- Regenerative -->
-          <a href="#contact" class="service-card fade-in">
+          <a href="treatments/prp-hair-rejuvenation.html" class="service-card fade-in">
             <div class="service-image">
               <img src="https://images.pexels.com/photos/28994388/pexels-photo-28994388.jpeg?auto=compress&cs=tinysrgb&w=600" alt="PRP hair rejuvenation" loading="lazy">
               <div class="service-overlay"></div>
               <span class="service-tag">Regenerative</span>
             </div>
             <div class="service-body">
-              <h3>PRP Hair Rejuvenation</h3>
+              
               <p>Doctor-delivered platelet-rich plasma injections that stimulate hair growth and scalp health.</p>
             </div>
           </a>
 
-          <a href="#contact" class="service-card fade-in">
+          <a href="treatments/joint-prp.html" class="service-card fade-in">
             <div class="service-image">
               <img src="https://images.pexels.com/photos/6568231/pexels-photo-6568231.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Joint PRP treatment" loading="lazy">
               <div class="service-overlay"></div>
               <span class="service-tag">Regenerative</span>
             </div>
             <div class="service-body">
-              <h3>Joint PRP</h3>
+              
               <p>Advanced regenerative therapy using PRP combined with specialised medical gel to support joint recovery.</p>
             </div>
           </a>
 
           <!-- Minor Procedures -->
-          <a href="#contact" class="service-card fade-in">
+          <a href="treatments/mole-lump-removal.html" class="service-card fade-in">
             <div class="service-image">
               <img src="https://images.pexels.com/photos/7108173/pexels-photo-7108173.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Mole and lump removal" loading="lazy">
               <div class="service-overlay"></div>
               <span class="service-tag">Minor Surgery</span>
             </div>
             <div class="service-body">
-              <h3>Mole & Lump Removal</h3>
+              
               <p>Safe, clinical removal performed by a trained medical practitioner in a sterile environment.</p>
             </div>
           </a>
 
           <!-- Wellness -->
-          <a href="#contact" class="service-card fade-in">
+          <a href="treatments/private-blood-tests.html" class="service-card fade-in">
             <div class="service-image">
               <img src="https://images.pexels.com/photos/6627687/pexels-photo-6627687.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Private blood tests" loading="lazy">
               <div class="service-overlay"></div>
               <span class="service-tag">Wellness</span>
             </div>
             <div class="service-body">
-              <h3>Private Blood Tests</h3>
+              
               <p>Comprehensive diagnostic blood panels with clinician interpretation and guidance.</p>
             </div>
           </a>
 
-          <a href="#contact" class="service-card fade-in">
+          <a href="treatments/iv-drip-therapy.html" class="service-card fade-in">
             <div class="service-image">
               <img src="https://images.pexels.com/photos/3845126/pexels-photo-3845126.jpeg?auto=compress&cs=tinysrgb&w=600" alt="IV drip therapy" loading="lazy">
               <div class="service-overlay"></div>
               <span class="service-tag">Wellness</span>
             </div>
             <div class="service-body">
-              <h3>IV Drip Therapy</h3>
+              
               <p>Medical-grade vitamin and hydration infusions to support wellbeing and recovery.</p>
             </div>
           </a>
 
-          <a href="#contact" class="service-card fade-in">
+          <a href="treatments/private-consultation.html" class="service-card fade-in">
             <div class="service-image">
               <img src="https://images.pexels.com/photos/7659869/pexels-photo-7659869.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Private doctor consultation" loading="lazy">
               <div class="service-overlay"></div>
               <span class="service-tag">Wellness</span>
             </div>
             <div class="service-body">
-              <h3>Private Doctor Consultation</h3>
+              
               <p>Discuss your aesthetic or wellness goals confidentially with a medical doctor.</p>
             </div>
           </a>
 
           <!-- Weight Management -->
-          <a href="#contact" class="service-card fade-in">
+          <a href="treatments/weight-loss.html" class="service-card fade-in">
             <div class="service-image">
               <img src="https://images.pexels.com/photos/12599603/pexels-photo-12599603.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Weight loss consultation" loading="lazy">
               <div class="service-overlay"></div>
               <span class="service-tag">Weight Loss</span>
             </div>
             <div class="service-body">
-              <h3>Weight Loss Consultation</h3>
+              
               <p>Access to safe medical weight management programmes, including Mounjaro and Ozempic where clinically appropriate.</p>
             </div>
           </a>
@@ -772,76 +756,7 @@
     </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col footer-brand">
-          <div class="footer-logo">
-            <svg class="logo-mark" viewBox="0 0 100 100" width="36" height="36" aria-hidden="true">
-              <rect width="100" height="100" rx="22" fill="#0d5c5c"/>
-              <text x="50" y="70" font-size="56" font-family="Georgia, serif" fill="#c9a96a" text-anchor="middle">A</text>
-            </svg>
-            <span>Altri Medical Ltd</span>
-          </div>
-          <p>Doctor-led aesthetics clinic in Altrincham. Evidence-based treatments, natural results, and clinical safety — delivered by GMC-registered doctors.</p>
-          <p class="footer-address">35a Stamford New Road<br>Altrincham, WA14 1EB</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Treatments</h4>
-          <ul>
-            <li><a href="#services">Thread Lifts</a></li>
-            <li><a href="#services">Anti-Wrinkle Injections</a></li>
-            <li><a href="#services">Dermal Fillers</a></li>
-            <li><a href="#services">PRP Hair Rejuvenation</a></li>
-            <li><a href="#services">Weight Loss Programmes</a></li>
-            <li><a href="#services">IV Drip Therapy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#doctors">Our Doctors</a></li>
-            <li><a href="#testimonials">Reviews</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="tel:01615317727">📞 0161 531 7727</a></li>
-            <li><a href="mailto:altrimedical@gmail.com">✉️ altrimedical@gmail.com</a></li>
-            <li>Mon–Fri: 9am–6pm</li>
-            <li>Sat: 9am–2pm</li>
-          </ul>
-          <a href="#contact" class="btn btn-gold btn-sm">Book Now</a>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Altri Medical Ltd. All rights reserved. Registered in England & Wales.</p>
-        <p class="footer-credit">GMC-Registered · NHS-Trained · Serving Altrincham & Cheshire</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ===== MOBILE STICKY CTA ===== -->
-  <div class="mobile-cta" id="mobile-cta">
-    <a href="tel:01615317727" class="mobile-cta-btn mobile-cta-call">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      Call
-    </a>
-    <a href="#contact" class="mobile-cta-btn mobile-cta-book">
-      Book Consultation
-    </a>
-  </div>
-
+  <script src="js/components.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

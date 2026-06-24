@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.altrimedical.co.uk/sitemap.xml
+
+# Disallow admin/internal paths
+Disallow: /_internal/
