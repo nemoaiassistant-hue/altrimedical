@@ -16,6 +16,44 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://www.altrimedical.co.uk/blog/polynucleotides-vs-dermal-fillers.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.altrimedical.co.uk/blog/botox-myths-debunked.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.altrimedical.co.uk/blog/mounjaro-vs-ozempic-guide.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.altrimedical.co.uk/blog/prp-hair-loss-science.html</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.altrimedical.co.uk/blog/thread-lifts-explained.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.altrimedical.co.uk/blog/private-blood-tests-guide.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Treatment Pages -->
   <url>
     <loc>https://www.altrimedical.co.uk/treatments/thread-lifts.html</loc>
@@ -91,6 +129,38 @@
   </url>
   <url>
     <loc>https://www.altrimedical.co.uk/treatments/sexual-wellness.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Service Area Pages -->
+  <url>
+    <loc>https://www.altrimedical.co.uk/service-areas/sale.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.altrimedical.co.uk/service-areas/timperley.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.altrimedical.co.uk/service-areas/bowdon.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.altrimedical.co.uk/service-areas/cheadle.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.altrimedical.co.uk/service-areas/manchester.html</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

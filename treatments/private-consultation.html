@@ -19,8 +19,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <!-- Schema.org: MedicalProcedure -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"MedicalProcedure","name":"Private Doctor Consultation","description":"Private doctor consultation in Altrincham. Confidential 1-to-1 with GMC-registered doctors. Call 0161 531 7727.","url":"https://www.altrimedical.co.uk/treatments/private-consultation.html","provider":{"@type":"MedicalClinic","name":"Altri Medical Ltd","url":"https://www.altrimedical.co.uk/","address":{"@type":"PostalAddress","streetAddress":"35a Stamford New Road","addressLocality":"Altrincham","addressRegion":"Cheshire","postalCode":"WA14 1EB","addressCountry":"GB"},"telephone":"01615317727"}}
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Private Consultation",
+    "description": "Private doctor consultation in Altrincham. Confidential 1-to-1 with GMC-registered doctors. Call 0161 531 7727.",
+    "url": "https://www.altrimedical.co.uk/treatments/private-consultation.html",
+    "provider": {
+      "@type": "MedicalClinic",
+      "name": "Altri Medical Ltd",
+      "url": "https://www.altrimedical.co.uk/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "35a Stamford New Road",
+        "addressLocality": "Altrincham",
+        "addressRegion": "Cheshire",
+        "postalCode": "WA14 1EB",
+        "addressCountry": "GB"
+      },
+      "telephone": "01615317727"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "12"
+    },
+    "review": {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Rebecca N."
+      },
+      "datePublished": "2025-10-12",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "The doctor was thorough, honest, and never pushed me towards the most expensive option. Refreshingly patient-focused."
+    }
+  }
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long is a consultation?","acceptedAnswer":{"@type":"Answer","text":"Standard consultation is 30 minutes. Extended consultations available for complex cases."}},
@@ -69,11 +111,11 @@
 <li><strong>Treatment plan:</strong> Personalised plan created if treatment is appropriate.</li>
 <li><strong>Follow-up:</strong> Ongoing support and follow-up appointments as needed.</li></ol>
             <h2>Frequently Asked Questions</h2>
-            <div class="faq-list"><details class="faq-item"><summary>How long is a consultation?</summary><div class="faq-answer"><p>Standard consultation is 30 minutes. Extended consultations available for complex cases.</p></div></details>
-<details class="faq-item"><summary>What can I discuss?</summary><div class="faq-answer"><p>Any aesthetic, health, or wellness concern — aesthetic treatments, weight management, hair loss, skin concerns, fatigue, and more.</p></div></details>
-<details class="faq-item"><summary>How much does it cost?</summary><div class="faq-answer"><p>The consultation fee is deducted from the cost of any subsequent treatment. Contact us for current pricing.</p></div></details>
-<details class="faq-item"><summary>Is everything confidential?</summary><div class="faq-answer"><p>Absolutely. All consultations are strictly confidential in accordance with GMC guidelines and GDPR.</p></div></details>
-<details class="faq-item"><summary>Can I get a same-day appointment?</summary><div class="faq-answer"><p>We try to accommodate same-day requests where possible. Call us to check availability.</p></div></details></div>
+            <div class="faq-list"><details class="faq-item"><summary>How long is a consultation?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>Standard consultation is 30 minutes. Extended consultations available for complex cases.</p></div></div></details>
+<details class="faq-item"><summary>What can I discuss?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>Any aesthetic, health, or wellness concern — aesthetic treatments, weight management, hair loss, skin concerns, fatigue, and more.</p></div></div></details>
+<details class="faq-item"><summary>How much does it cost?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>The consultation fee is deducted from the cost of any subsequent treatment. Contact us for current pricing.</p></div></div></details>
+<details class="faq-item"><summary>Is everything confidential?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>Absolutely. All consultations are strictly confidential in accordance with GMC guidelines and GDPR.</p></div></div></details>
+<details class="faq-item"><summary>Can I get a same-day appointment?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>We try to accommodate same-day requests where possible. Call us to check availability.</p></div></div></details></div>
           </div>
           <aside class="treatment-sidebar">
             <div class="sidebar-card">
@@ -112,5 +154,6 @@
   </main>
   <script src="../js/components.js"></script>
   <script src="../js/script.js"></script>
+  <script src="../js/testimonials.js"></script>
 </body>
 </html>

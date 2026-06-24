@@ -19,8 +19,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <!-- Schema.org: MedicalProcedure -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"MedicalProcedure","name":"Private Blood Tests","description":"Private blood tests in Altrincham with clinician interpretation. Comprehensive diagnostic panels with fast results. Call 0161 531 7727.","url":"https://www.altrimedical.co.uk/treatments/private-blood-tests.html","provider":{"@type":"MedicalClinic","name":"Altri Medical Ltd","url":"https://www.altrimedical.co.uk/","address":{"@type":"PostalAddress","streetAddress":"35a Stamford New Road","addressLocality":"Altrincham","addressRegion":"Cheshire","postalCode":"WA14 1EB","addressCountry":"GB"},"telephone":"01615317727"}}
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Private Blood Tests",
+    "description": "Private blood tests in Altrincham with clinician interpretation. Comprehensive diagnostic panels with fast results. Call 0161 531 7727.",
+    "url": "https://www.altrimedical.co.uk/treatments/private-blood-tests.html",
+    "provider": {
+      "@type": "MedicalClinic",
+      "name": "Altri Medical Ltd",
+      "url": "https://www.altrimedical.co.uk/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "35a Stamford New Road",
+        "addressLocality": "Altrincham",
+        "addressRegion": "Cheshire",
+        "postalCode": "WA14 1EB",
+        "addressCountry": "GB"
+      },
+      "telephone": "01615317727"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "38"
+    },
+    "review": {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Jane E."
+      },
+      "datePublished": "2025-09-30",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Quick, easy, and thorough. Got results back within 48 hours with a clear explanation. So much better than waiting weeks."
+    }
+  }
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How quickly will I get results?","acceptedAnswer":{"@type":"Answer","text":"Most results within 24-72 hours. Your doctor contacts you as soon as results are in."}},
@@ -69,11 +111,11 @@
 <li><strong>Results & interpretation:</strong> Doctor reviews results and arranges a follow-up to explain findings.</li>
 <li><strong>Action plan:</strong> If results require attention, your doctor discusses next steps.</li></ol>
             <h2>Frequently Asked Questions</h2>
-            <div class="faq-list"><details class="faq-item"><summary>How quickly will I get results?</summary><div class="faq-answer"><p>Most results within 24-72 hours. Your doctor contacts you as soon as results are in.</p></div></details>
-<details class="faq-item"><summary>What tests do you offer?</summary><div class="faq-answer"><p>Full blood count, liver/kidney function, thyroid, hormones, vitamin D, B12, iron, cholesterol, HbA1c, and more.</p></div></details>
-<details class="faq-item"><summary>Do I need a GP referral?</summary><div class="faq-answer"><p>No referral needed. You can book directly with us.</p></div></details>
-<details class="faq-item"><summary>How much do blood tests cost?</summary><div class="faq-answer"><p>Basic screening from £100, comprehensive panels from £150-£400. Your doctor discusses costs before any tests are arranged.</p></div></details>
-<details class="faq-item"><summary>Do I need to fast?</summary><div class="faq-answer"><p>Some tests require fasting (8-12 hours). Your doctor will advise when booking.</p></div></details></div>
+            <div class="faq-list"><details class="faq-item"><summary>How quickly will I get results?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>Most results within 24-72 hours. Your doctor contacts you as soon as results are in.</p></div></div></details>
+<details class="faq-item"><summary>What tests do you offer?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>Full blood count, liver/kidney function, thyroid, hormones, vitamin D, B12, iron, cholesterol, HbA1c, and more.</p></div></div></details>
+<details class="faq-item"><summary>Do I need a GP referral?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>No referral needed. You can book directly with us.</p></div></div></details>
+<details class="faq-item"><summary>How much do blood tests cost?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>Basic screening from £100, comprehensive panels from £150-£400. Your doctor discusses costs before any tests are arranged.</p></div></div></details>
+<details class="faq-item"><summary>Do I need to fast?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>Some tests require fasting (8-12 hours). Your doctor will advise when booking.</p></div></div></details></div>
           </div>
           <aside class="treatment-sidebar">
             <div class="sidebar-card">
@@ -112,5 +154,6 @@
   </main>
   <script src="../js/components.js"></script>
   <script src="../js/script.js"></script>
+  <script src="../js/testimonials.js"></script>
 </body>
 </html>

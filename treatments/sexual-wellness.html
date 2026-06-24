@@ -19,8 +19,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <!-- Schema.org: MedicalProcedure -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"MedicalProcedure","name":"Sexual Wellness","description":"Sexual wellness treatments in Altrincham. P-Shot for men & O-Shot for women by GMC-registered doctors. Confidential. Call 0161 531 7727.","url":"https://www.altrimedical.co.uk/treatments/sexual-wellness.html","provider":{"@type":"MedicalClinic","name":"Altri Medical Ltd","url":"https://www.altrimedical.co.uk/","address":{"@type":"PostalAddress","streetAddress":"35a Stamford New Road","addressLocality":"Altrincham","addressRegion":"Cheshire","postalCode":"WA14 1EB","addressCountry":"GB"},"telephone":"01615317727"}}
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Sexual Wellness",
+    "description": "Sexual wellness treatments in Altrincham. P-Shot for men & O-Shot for women by GMC-registered doctors. Confidential. Call 0161 531 7727.",
+    "url": "https://www.altrimedical.co.uk/treatments/sexual-wellness.html",
+    "provider": {
+      "@type": "MedicalClinic",
+      "name": "Altri Medical Ltd",
+      "url": "https://www.altrimedical.co.uk/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "35a Stamford New Road",
+        "addressLocality": "Altrincham",
+        "addressRegion": "Cheshire",
+        "postalCode": "WA14 1EB",
+        "addressCountry": "GB"
+      },
+      "telephone": "01615317727"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "14"
+    },
+    "review": {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Chris M."
+      },
+      "datePublished": "2025-11-08",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Complete professionalism and discretion throughout. The treatment has made a real difference."
+    }
+  }
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the P-Shot?","acceptedAnswer":{"@type":"Answer","text":"A regenerative treatment for men using PRP injected into the penis to improve blood flow, tissue health, and sensitivity."}},
@@ -68,10 +110,10 @@
 <li><strong>Treatment:</strong> PRP injected into targeted areas using fine needle.</li>
 <li><strong>Aftercare:</strong> Post-treatment instructions. Normal activities within 24-48 hours.</li></ol>
             <h2>Frequently Asked Questions</h2>
-            <div class="faq-list"><details class="faq-item"><summary>What is the P-Shot?</summary><div class="faq-answer"><p>A regenerative treatment for men using PRP injected into the penis to improve blood flow, tissue health, and sensitivity.</p></div></details>
-<details class="faq-item"><summary>What is the O-Shot?</summary><div class="faq-answer"><p>A regenerative treatment for women using PRP injected into vaginal and clitoral areas to improve arousal and lubrication.</p></div></details>
-<details class="faq-item"><summary>Is everything confidential?</summary><div class="faq-answer"><p>Absolutely. All consultations and treatments are strictly confidential under medical confidentiality guidelines and GDPR.</p></div></details>
-<details class="faq-item"><summary>How soon will I see results?</summary><div class="faq-answer"><p>Some improvement within 2-3 weeks, optimal results over 3-6 months.</p></div></details></div>
+            <div class="faq-list"><details class="faq-item"><summary>What is the P-Shot?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>A regenerative treatment for men using PRP injected into the penis to improve blood flow, tissue health, and sensitivity.</p></div></div></details>
+<details class="faq-item"><summary>What is the O-Shot?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>A regenerative treatment for women using PRP injected into vaginal and clitoral areas to improve arousal and lubrication.</p></div></div></details>
+<details class="faq-item"><summary>Is everything confidential?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>Absolutely. All consultations and treatments are strictly confidential under medical confidentiality guidelines and GDPR.</p></div></div></details>
+<details class="faq-item"><summary>How soon will I see results?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>Some improvement within 2-3 weeks, optimal results over 3-6 months.</p></div></div></details></div>
           </div>
           <aside class="treatment-sidebar">
             <div class="sidebar-card">
@@ -110,5 +152,6 @@
   </main>
   <script src="../js/components.js"></script>
   <script src="../js/script.js"></script>
+  <script src="../js/testimonials.js"></script>
 </body>
 </html>

@@ -19,8 +19,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <!-- Schema.org: MedicalProcedure -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"MedicalProcedure","name":"IV Drip Therapy","description":"IV drip therapy in Altrincham by GMC-registered doctors. Medical-grade vitamin & hydration infusions for energy, immunity & recovery. Book 0161 531 7727.","url":"https://www.altrimedical.co.uk/treatments/iv-drip-therapy.html","provider":{"@type":"MedicalClinic","name":"Altri Medical Ltd","url":"https://www.altrimedical.co.uk/","address":{"@type":"PostalAddress","streetAddress":"35a Stamford New Road","addressLocality":"Altrincham","addressRegion":"Cheshire","postalCode":"WA14 1EB","addressCountry":"GB"},"telephone":"01615317727"}}
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "IV Drip Therapy",
+    "description": "IV drip therapy in Altrincham by GMC-registered doctors. Medical-grade vitamin & hydration infusions for energy, immunity & recovery. Book 0161 531 7727.",
+    "url": "https://www.altrimedical.co.uk/treatments/iv-drip-therapy.html",
+    "provider": {
+      "@type": "MedicalClinic",
+      "name": "Altri Medical Ltd",
+      "url": "https://www.altrimedical.co.uk/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "35a Stamford New Road",
+        "addressLocality": "Altrincham",
+        "addressRegion": "Cheshire",
+        "postalCode": "WA14 1EB",
+        "addressCountry": "GB"
+      },
+      "telephone": "01615317727"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "31"
+    },
+    "review": {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Laura J."
+      },
+      "datePublished": "2025-11-25",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Felt energised within hours and the effects lasted well over a week. The relaxing clinic environment helped too."
+    }
+  }
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does an IV drip take?","acceptedAnswer":{"@type":"Answer","text":"Most take 30-60 minutes. Allow approximately 90 minutes for your full appointment."}},
@@ -68,10 +110,10 @@
 <li><strong>Monitoring:</strong> Your doctor monitors you throughout the treatment.</li>
 <li><strong>Aftercare:</strong> Cannula removed and you can go about your day immediately.</li></ol>
             <h2>Frequently Asked Questions</h2>
-            <div class="faq-list"><details class="faq-item"><summary>How long does an IV drip take?</summary><div class="faq-answer"><p>Most take 30-60 minutes. Allow approximately 90 minutes for your full appointment.</p></div></details>
-<details class="faq-item"><summary>Is IV therapy safe?</summary><div class="faq-answer"><p>When administered by a qualified medical professional, IV therapy is very safe. All drips are prescribed and supervised by GMC-registered doctors.</p></div></details>
-<details class="faq-item"><summary>How often can I have IV drips?</summary><div class="faq-answer"><p>Frequency depends on your needs. Some patients have weekly sessions, others monthly maintenance. Your doctor will recommend an appropriate schedule.</p></div></details>
-<details class="faq-item"><summary>Will I feel effects immediately?</summary><div class="faq-answer"><p>Many patients report feeling benefits within hours — particularly increased energy. Full effects develop over 24-48 hours.</p></div></details></div>
+            <div class="faq-list"><details class="faq-item"><summary>How long does an IV drip take?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>Most take 30-60 minutes. Allow approximately 90 minutes for your full appointment.</p></div></div></details>
+<details class="faq-item"><summary>Is IV therapy safe?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>When administered by a qualified medical professional, IV therapy is very safe. All drips are prescribed and supervised by GMC-registered doctors.</p></div></div></details>
+<details class="faq-item"><summary>How often can I have IV drips?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>Frequency depends on your needs. Some patients have weekly sessions, others monthly maintenance. Your doctor will recommend an appropriate schedule.</p></div></div></details>
+<details class="faq-item"><summary>Will I feel effects immediately?</summary><div class="faq-answer-wrap"><div class="faq-answer"><p>Many patients report feeling benefits within hours — particularly increased energy. Full effects develop over 24-48 hours.</p></div></div></details></div>
           </div>
           <aside class="treatment-sidebar">
             <div class="sidebar-card">
@@ -110,5 +152,6 @@
   </main>
   <script src="../js/components.js"></script>
   <script src="../js/script.js"></script>
+  <script src="../js/testimonials.js"></script>
 </body>
 </html>
