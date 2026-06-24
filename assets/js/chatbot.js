@@ -218,7 +218,7 @@
         </button>\
       </div>\
     </div>\
-    <div class="powered">Powered by <b>Cloud Hak</b> · GLM-5.2</div>\
+    <div class="powered">Powered by <b>Cloud Hak AI</b></div>\
   </div>';
 
   var bubble = root.getElementById('bubble');
