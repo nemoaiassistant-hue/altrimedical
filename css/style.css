@@ -721,12 +721,41 @@ h1, h2, h3, h4 {
     opacity: 1;
     visibility: visible;
     display: none;
-    padding: var(--s-3) 0;
-    max-height: none;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
   }
 
-  .nav-menu.active .nav-dropdown-menu {
+  /* Only show dropdown when the dropdown trigger itself is tapped */
+  .nav-dropdown.active .nav-dropdown-menu {
     display: block;
+    max-height: 500px;
+    padding: var(--s-3) 0;
+  }
+
+  .nav-dropdown-trigger {
+    justify-content: center;
+    width: 100%;
+    padding: var(--s-3) 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-dropdown-trigger svg {
+    transition: transform 0.3s ease;
+  }
+
+  .nav-dropdown.active .nav-dropdown-trigger svg {
+    transform: rotate(180deg);
+  }
+
+  .nav-dropdown-label {
+    padding-top: var(--s-4);
+  }
+
+  .nav-dropdown-menu a {
+    padding: var(--s-2) var(--s-4);
+    font-size: 0.95rem;
   }
 
   .nav-dropdown-menu a:hover {

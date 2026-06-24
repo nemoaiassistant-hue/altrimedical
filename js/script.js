@@ -40,6 +40,18 @@
     });
   });
 
+  // Mobile dropdown toggle — tap "Treatments" to expand/collapse submenu
+  const dropdownTriggers = navMenu.querySelectorAll('.nav-dropdown-trigger');
+  dropdownTriggers.forEach(function(trigger) {
+    trigger.addEventListener('click', function(e) {
+      // Only prevent default on mobile (where dropdown needs toggle)
+      if (window.innerWidth <= 960) {
+        e.preventDefault();
+        trigger.closest('.nav-dropdown').classList.toggle('active');
+      }
+    });
+  });
+
   /* ===== ACTIVE NAV ON SCROLL ===== */
   const sections = document.querySelectorAll('section[id]');
   const navLinks = navMenu.querySelectorAll('a');
