@@ -676,6 +676,63 @@ h1, h2, h3, h4 {
   margin-top: var(--s-4);
 }
 
+/* Sidebar Pricing Table */
+.sidebar-pricing {
+  margin-top: var(--s-4);
+  padding: var(--s-4);
+  background: var(--cream-dark, #f3efe8);
+  border-radius: var(--r-sm);
+}
+
+.sidebar-pricing h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--teal);
+  margin: 0 0 var(--s-3) 0;
+}
+
+.sidebar-pricing table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.sidebar-pricing table tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-pricing table tr:last-child {
+  border-bottom: none;
+}
+
+.sidebar-pricing table td {
+  padding: var(--s-2) 0;
+  vertical-align: top;
+}
+
+.sidebar-pricing table td:first-child {
+  text-align: left;
+  color: var(--text);
+  padding-right: var(--s-3);
+}
+
+.sidebar-pricing table td:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: var(--teal);
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .sidebar-pricing {
+    padding: var(--s-3);
+  }
+
+  .sidebar-pricing table {
+    font-size: 0.82rem;
+  }
+}
+
 .sidebar-nav h4 {
   margin-bottom: var(--s-3);
 }
