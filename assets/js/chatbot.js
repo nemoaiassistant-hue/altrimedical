@@ -42,11 +42,14 @@
   .bubble {\
     position:fixed; bottom:24px; right:24px; width:64px; height:64px; border-radius:50%;\
     border:none; cursor:pointer; pointer-events:auto;\
-    background: linear-gradient(135deg, #0d5c5c, #0a4848);  /* ALTRI BRAND: teal */\
+    background: linear-gradient(135deg, #0d5c5c, #0a4848);\
     box-shadow: 0 8px 32px rgba(13,92,92,0.3), 0 2px 8px rgba(201,169,106,0.2);\
     display:flex; align-items:center; justify-content:center;\
     transition: transform 0.2s cubic-bezier(.2,.7,.2,1);\
     animation: bubbleIn 0.5s cubic-bezier(.2,.7,.2,1);\
+  }\
+  @media(max-width:960px){\
+    .bubble { bottom:80px; }\
   }\
   .bubble:hover { transform: scale(1.05); }\
   .bubble:active { transform: scale(0.92); }\
