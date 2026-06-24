@@ -159,7 +159,7 @@
   .typing span:nth-child(3){animation-delay:0.4s;}\
   @keyframes blink { 0%,60%,100%{opacity:0.3;} 30%{opacity:1;} }\
   \
-  .input-bar { flex-shrink:0; padding:10px 14px 8px; border-top:1px solid rgba(13,92,92,0.08); background:#fff; }\
+  .input-bar { flex-shrink:0; padding:10px 14px 8px; border-top:1px solid rgba(13,92,92,0.08); background:#fff; position:relative; z-index:10; }\
   .input-box {\
     display:flex; gap:8px; align-items:flex-end;\
     background:#ede8e0; border:1px solid rgba(13,92,92,0.1); border-radius:24px; padding:4px 4px 4px 18px;\
@@ -364,7 +364,7 @@
       })
       .then(function(data) {
         if (!data.error) renderMessages(data.messages);
-        setTimeout(showQuick, 1200);
+        // Don't re-show quick replies after first message
       })
       .catch(function() {
         hideTyping();
@@ -377,11 +377,22 @@
 
   if (window.visualViewport) {
     var vw = window.visualViewport;
-    vw.addEventListener('resize', function() {
+    var onResize = function() {
       if (panel.classList.contains('active')) {
-        panel.style.height = vw.height + 'px';
+        // Use viewport height (shrinks when keyboard opens)
+        var h = vw.height;
+        // Position panel from the top of visible area
+        if (window.innerWidth <= 600) {
+          panel.style.height = h + 'px';
+          panel.style.maxHeight = h + 'px';
+          panel.style.bottom = 'auto';
+          panel.style.top = vw.offsetTop + 'px';
+        }
+        // Keep input visible above keyboard
         chat.scrollTop = chat.scrollHeight;
       }
-    });
+    };
+    vw.addEventListener('resize', onResize);
+    vw.addEventListener('scroll', onResize);
   }
 })();
