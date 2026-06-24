@@ -31,8 +31,8 @@
     hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
   });
 
-  // Close menu when clicking a link
-  navMenu.querySelectorAll('a').forEach(function(link) {
+  // Close menu when clicking a regular link (exclude dropdown triggers)
+  navMenu.querySelectorAll('a:not(.nav-dropdown-trigger)').forEach(function(link) {
     link.addEventListener('click', function() {
       hamburger.classList.remove('active');
       navMenu.classList.remove('active');
@@ -41,12 +41,11 @@
   });
 
   // Mobile dropdown toggle — tap "Treatments" to expand/collapse submenu
-  const dropdownTriggers = navMenu.querySelectorAll('.nav-dropdown-trigger');
-  dropdownTriggers.forEach(function(trigger) {
+  navMenu.querySelectorAll('.nav-dropdown-trigger').forEach(function(trigger) {
     trigger.addEventListener('click', function(e) {
-      // Only prevent default on mobile (where dropdown needs toggle)
       if (window.innerWidth <= 960) {
         e.preventDefault();
+        e.stopPropagation();
         trigger.closest('.nav-dropdown').classList.toggle('active');
       }
     });
