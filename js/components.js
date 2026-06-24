@@ -53,6 +53,8 @@
             </div>
           </div>
           <a href="${BASE}/index.html#doctors" class="${currentPage === 'doctors' ? 'active' : ''}">Our Doctors</a>
+          <a href="${BASE}/quiz.html" class="${currentPage === 'quiz' ? 'active' : ''}">Quiz</a>
+          <a href="${BASE}/gallery.html" class="${currentPage === 'gallery' ? 'active' : ''}">Gallery</a>
           <a href="${BASE}/index.html#testimonials" class="${currentPage === 'testimonials' ? 'active' : ''}">Reviews</a>
           <a href="${BASE}/index.html#faq" class="${currentPage === 'faq' ? 'active' : ''}">FAQ</a>
           <a href="${BASE}/blog.html" class="${currentPage === 'blog' ? 'active' : ''}">Blog</a>

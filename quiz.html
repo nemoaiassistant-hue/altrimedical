@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treatment Quiz | Find Your Perfect Treatment | Altri Medical</title>
+  <meta name="description" content="Take the Altri Medical treatment quiz and find your perfect treatment in under 60 seconds. Answer 5 quick questions and get personalised recommendations from our GMC-registered doctors.">
+  <meta name="keywords" content="treatment quiz, aesthetics consultation quiz, find the right treatment, Altrincham treatment finder, anti-wrinkle, dermal fillers, thread lifts">
+  <meta name="author" content="Altri Medical Ltd">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0d5c5c">
+  <link rel="canonical" href="https://www.altrimedical.co.uk/quiz.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Treatment Quiz | Find Your Perfect Treatment | Altri Medical">
+  <meta property="og:description" content="Answer 5 quick questions and get personalised treatment recommendations from Altri Medical's GMC-registered doctors.">
+  <meta property="og:url" content="https://www.altrimedical.co.uk/quiz.html">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230d5c5c'/><text x='50' y='68' font-size='54' font-family='Georgia' fill='%23c9a96a' text-anchor='middle'>A</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.altrimedical.co.uk/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Treatment Quiz",
+        "item": "https://www.altrimedical.co.uk/quiz.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Quiz-specific styles (scoped under .quiz-) ===== -->
+  <style>
+    .quiz-hero {
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+      color: var(--white);
+      padding: calc(var(--s-20) + 30px) 0 var(--s-12);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .quiz-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(201,169,106,0.18), transparent 55%);
+      pointer-events: none;
+    }
+    .quiz-hero .section-label { color: var(--gold); }
+    .quiz-hero h1 {
+      color: var(--white);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      margin-bottom: var(--s-4);
+    }
+    .quiz-hero p {
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* Quiz section */
+    .quiz-section {
+      padding: var(--s-12) 0 var(--s-16);
+      background: var(--cream);
+    }
+    .quiz-wrap {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 var(--s-6);
+      position: relative;
+    }
+
+    /* Progress bar */
+    .quiz-progress {
+      height: 8px;
+      background: var(--border);
+      border-radius: var(--r-full);
+      overflow: hidden;
+      margin-bottom: var(--s-7);
+    }
+    .quiz-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+      border-radius: var(--r-full);
+      transition: width 0.5s var(--ease);
+    }
+    .quiz-progress-text {
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-light);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: var(--s-6);
+    }
+    .quiz-progress-text span { color: var(--gold); }
+
+    /* Card container */
+    .quiz-card {
+      background: var(--white);
+      border-radius: var(--r-xl);
+      box-shadow: var(--shadow-md);
+      padding: var(--s-8) var(--s-6);
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .quiz-step {
+      animation: quizSlideIn 0.45s var(--ease) both;
+    }
+    @keyframes quizSlideIn {
+      from { opacity: 0; transform: translateX(40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    .quiz-step.back {
+      animation: quizSlideBack 0.45s var(--ease) both;
+    }
+    @keyframes quizSlideBack {
+      from { opacity: 0; transform: translateX(-40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    .quiz-step h2 {
+      font-size: clamp(1.4rem, 3vw, 1.85rem);
+      margin-bottom: var(--s-2);
+      text-align: center;
+    }
+    .quiz-step .quiz-sub {
+      text-align: center;
+      color: var(--text-light);
+      margin-bottom: var(--s-6);
+      font-size: 0.98rem;
+    }
+
+    /* Answer options */
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+      margin-top: auto;
+    }
+    .quiz-options.grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .quiz-opt {
+      display: flex;
+      align-items: center;
+      gap: var(--s-4);
+      width: 100%;
+      text-align: left;
+      background: var(--cream);
+      border: 2px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: var(--s-4) var(--s-5);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      cursor: pointer;
+      transition: all var(--t-fast);
+      line-height: 1.4;
+    }
+    .quiz-opt:hover, .quiz-opt:focus-visible {
+      border-color: var(--gold);
+      background: var(--white);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+      outline: none;
+    }
+    .quiz-opt .quiz-opt-ico {
+      flex-shrink: 0;
+      width: 46px;
+      height: 46px;
+      border-radius: var(--r-md);
+      background: var(--teal);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--t-fast);
+    }
+    .quiz-opt .quiz-opt-ico svg { width: 24px; height: 24px; }
+    .quiz-opt:hover .quiz-opt-ico { background: var(--gold); }
+    .quiz-opt-cta {
+      background: var(--teal);
+      color: var(--white);
+      border-color: var(--teal);
+    }
+    .quiz-opt-cta .quiz-opt-ico { background: rgba(255,255,255,0.15); }
+    .quiz-opt-cta:hover {
+      background: var(--teal-dark);
+      color: var(--white);
+      border-color: var(--teal-dark);
+    }
+    .quiz-opt-cta:hover .quiz-opt-ico { background: var(--gold); }
+
+    /* Quiz nav buttons */
+    .quiz-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: var(--s-6);
+      gap: var(--s-4);
+    }
+    .quiz-back {
+      background: transparent;
+      border: 2px solid var(--border-dark);
+      color: var(--text-light);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: var(--s-3) var(--s-5);
+      border-radius: var(--r-full);
+      cursor: pointer;
+      transition: all var(--t-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+    }
+    .quiz-back:not(:disabled):hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+    .quiz-back:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .quiz-step-count {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-lighter);
+    }
+
+    /* ===== Results ===== */
+    .quiz-results {
+      animation: quizFade 0.5s var(--ease) both;
+    }
+    @keyframes quizFade {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .quiz-results-header {
+      text-align: center;
+      margin-bottom: var(--s-8);
+    }
+    .quiz-results-header .section-label { color: var(--gold); }
+    .quiz-results-header h2 {
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+      margin-bottom: var(--s-3);
+    }
+    .quiz-results-header p { color: var(--text-light); }
+
+    .rec-card {
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: var(--white);
+      margin-bottom: var(--s-6);
+    }
+    .rec-card.primary { border: 2px solid var(--gold); }
+    .rec-banner {
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: var(--white);
+      padding: var(--s-4) var(--s-5);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--s-3);
+    }
+    .rec-banner .rec-badge {
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: var(--s-1) var(--s-3);
+      border-radius: var(--r-full);
+    }
+    .rec-banner.secondary {
+      background: var(--cream-dark);
+      color: var(--text);
+    }
+    .rec-body {
+      padding: var(--s-6);
+    }
+    .rec-name {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      margin-bottom: var(--s-2);
+      color: var(--dark);
+    }
+    .rec-price {
+      display: inline-block;
+      background: var(--cream);
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: var(--s-1) var(--s-3);
+      border-radius: var(--r-full);
+      margin-bottom: var(--s-4);
+    }
+    .rec-desc {
+      color: var(--text-light);
+      margin-bottom: var(--s-5);
+      line-height: 1.6;
+    }
+    .rec-actions {
+      display: flex;
+      gap: var(--s-3);
+      flex-wrap: wrap;
+    }
+    .rec-actions .btn { flex: 1; min-width: 160px; }
+
+    .quiz-cta-block {
+      text-align: center;
+      background: var(--white);
+      border-radius: var(--r-xl);
+      padding: var(--s-7) var(--s-5);
+      box-shadow: var(--shadow-md);
+      margin: var(--s-8) 0 var(--s-6);
+    }
+    .quiz-cta-block h3 {
+      font-size: 1.4rem;
+      margin-bottom: var(--s-2);
+    }
+    .quiz-cta-block p {
+      color: var(--text-light);
+      margin-bottom: var(--s-5);
+    }
+    .quiz-cta-block .btn { margin: var(--s-1); }
+    .quiz-cta-block .btn-block { width: 100%; max-width: 340px; }
+
+    .quiz-footer-actions {
+      display: flex;
+      gap: var(--s-3);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: var(--s-4);
+    }
+
+    .quiz-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-lighter);
+      margin-top: var(--s-6);
+    }
+
+    @media (max-width: 560px) {
+      .quiz-card { padding: var(--s-6) var(--s-4); }
+      .quiz-options.grid-2 { grid-template-columns: 1fr; }
+      .rec-actions { flex-direction: column; }
+      .rec-actions .btn { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="quiz-hero">
+      <div class="container container-narrow">
+        <span class="section-label">Treatment Finder</span>
+        <h1>Find Your Perfect Treatment</h1>
+        <p>Answer 5 quick questions and we'll recommend the treatments best suited to your goals — recommended by our GMC-registered doctors.</p>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section class="quiz-section">
+      <div class="quiz-wrap">
+
+        <!-- Progress -->
+        <div class="quiz-progress" role="progressbar" aria-label="Quiz progress">
+          <div class="quiz-progress-bar" id="quizProgressBar"></div>
+        </div>
+        <div class="quiz-progress-text">Question <span id="quizCurrent">1</span> of <span id="quizTotal">5</span></div>
+
+        <!-- Quiz stage (questions + results injected here) -->
+        <div class="quiz-card" id="quizCard">
+          <!-- Step 1 -->
+          <div class="quiz-step" data-step="1" data-question>
+            <h2>What's your main concern?</h2>
+            <p class="quiz-sub">Choose the one that resonates most with you.</p>
+            <div class="quiz-options">
+              <button class="quiz-opt" data-scores='{"anti-wrinkle":3,"fillers":1}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c2-4 5-6 9-6s7 2 9 6"/><path d="M3 12c2 4 5 6 9 6s7-2 9-6"/></svg></span>
+                Wrinkles &amp; fine lines
+              </button>
+              <button class="quiz-opt" data-scores='{"fillers":3,"thread-lifts":1}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14c1 1.5 2.5 2 4 2s3-0.5 4-2"/></svg></span>
+                Loss of volume / definition
+              </button>
+              <button class="quiz-opt" data-scores='{"thread-lifts":3,"fillers":1}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M6 9l6-6 6 6M5 14l7 7 7-7"/></svg></span>
+                Sagging skin
+              </button>
+              <button class="quiz-opt" data-scores='{"prp-hair":3}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span>
+                Hair thinning / loss
+              </button>
+              <button class="quiz-opt" data-scores='{"joint-prp":3}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l3-3M9 6L6 3M12 7v6M9 10l3 3 3-3"/><circle cx="12" cy="17" r="4"/></svg></span>
+                Joint pain
+              </button>
+              <button class="quiz-opt" data-scores='{"mole-removal":3}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg></span>
+                Unwanted moles / lumps
+              </button>
+              <button class="quiz-opt" data-scores='{"weight-loss":3}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9h12l-1 11H7L6 9z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg></span>
+                Weight management
+              </button>
+              <button class="quiz-opt" data-scores='{"iv-drip":3}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M9 5l3-3 3 3M10 8h4l-1 6h-2l-1-6z"/><path d="M11 14v6M13 14v6"/></svg></span>
+                Low energy / fatigue
+              </button>
+              <button class="quiz-opt" data-scores='{"polynucleotides":3}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5 5-9z"/></svg></span>
+                Skin quality / rejuvenation
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="quiz-step" data-step="2" data-question hidden>
+            <h2>Which area concerns you most?</h2>
+            <p class="quiz-sub">Where would you like to see improvement?</p>
+            <div class="quiz-options grid-2">
+              <button class="quiz-opt" data-scores='{"anti-wrinkle":2}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/><path d="M9 15c1 1 2 1.5 3 1.5s2-0.5 3-1.5"/></svg></span>
+                Face (upper)
+              </button>
+              <button class="quiz-opt" data-scores='{"fillers":2,"thread-lifts":1}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M9 13c1 1 4 1 6 0"/></svg></span>
+                Face (mid/lower)
+              </button>
+              <button class="quiz-opt" data-scores='{"prp-hair":2}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10c0-5 4-7 8-7s8 2 8 7"/><path d="M7 10v9M11 10v9M15 10v9M17 10v9"/><path d="M4 19h16"/></svg></span>
+                Hair / scalp
+              </button>
+              <button class="quiz-opt" data-scores='{"mole-removal":1,"weight-loss":1,"iv-drip":1}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9"/><circle cx="12" cy="12" r="4"/></svg></span>
+                Body
+              </button>
+              <button class="quiz-opt" data-scores='{"iv-drip":1,"blood-tests":1}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-8-8"/><path d="M16 4l4 4-8 8h-4v-4l8-8z"/></svg></span>
+                Overall wellness
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="quiz-step" data-step="3" data-question hidden>
+            <h2>What's your budget range?</h2>
+            <p class="quiz-sub">There's no wrong answer — we'll tailor suggestions to you.</p>
+            <div class="quiz-options grid-2">
+              <button class="quiz-opt" data-scores='{"iv-drip":2,"anti-wrinkle":1}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                Under £100
+              </button>
+              <button class="quiz-opt" data-scores='{"anti-wrinkle":2,"fillers":1,"prp-hair":1}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M16 7H10a2.5 2.5 0 0 0 0 5h4a2.5 2.5 0 0 1 0 5H8"/></svg></span>
+                £100 – £300
+              </button>
+              <button class="quiz-opt" data-scores='{"fillers":2,"thread-lifts":1,"dimpleplasty":1}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M18 8H11a3 3 0 0 0 0 6h2a3 3 0 0 1 0 6H6"/></svg></span>
+                £300 – £700
+              </button>
+              <button class="quiz-opt" data-scores='{"thread-lifts":2,"dimpleplasty":2}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 7H22l-6 4.5 2.5 7.5L12 17l-6.5 4 2.5-7.5L2 9h7.5L12 2z"/></svg></span>
+                £700+
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="quiz-step" data-step="4" data-question hidden>
+            <h2>How quickly do you want results?</h2>
+            <p class="quiz-sub">Some treatments work instantly, others build gradually.</p>
+            <div class="quiz-options">
+              <button class="quiz-opt" data-scores='{"anti-wrinkle":2,"fillers":2}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor"/></svg></span>
+                Immediately
+              </button>
+              <button class="quiz-opt" data-scores='{"thread-lifts":2,"prp-hair":1}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></span>
+                Within weeks
+              </button>
+              <button class="quiz-opt" data-scores='{"prp-hair":2,"polynucleotides":2,"weight-loss":1}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><polyline points="21 7 21 11 17 11"/></svg></span>
+                Gradual improvement
+              </button>
+              <button class="quiz-opt" data-scores='{}'>
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .8-1 1.7"/><circle cx="12" cy="16.5" r="0.5" fill="currentColor"/></svg></span>
+                Not sure
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="quiz-step" data-step="5" data-question hidden>
+            <h2>Would you like a consultation?</h2>
+            <p class="quiz-sub">Our doctors can personalise a plan just for you.</p>
+            <div class="quiz-options">
+              <button class="quiz-opt quiz-opt-cta" data-cta="book">
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><polyline points="9 16 11 18 15 14"/></svg></span>
+                Yes, book now
+              </button>
+              <button class="quiz-opt quiz-opt-cta" data-cta="info">
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h0"/></svg></span>
+                Maybe, tell me more
+              </button>
+              <button class="quiz-opt quiz-opt-cta" data-cta="explore">
+                <span class="quiz-opt-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                Just exploring
+              </button>
+            </div>
+          </div>
+
+          <!-- Results (injected by JS) -->
+          <div class="quiz-results" id="quizResults" hidden></div>
+        </div>
+
+        <!-- Quiz nav -->
+        <div class="quiz-nav" id="quizNav">
+          <button class="quiz-back" id="quizBack" disabled>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+          </button>
+          <span class="quiz-step-count" id="quizStepCount"></span>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Quiz logic ===== -->
+  <script>
+  (function () {
+    'use strict';
+
+    var TREATWELL = 'https://widget.treatwell.co.uk/place/altri-medical/';
+
+    /* Treatment catalogue: name, price-from, description, treatment page link */
+    var TREATMENTS = {
+      'anti-wrinkle':  { name: 'Anti-Wrinkle Injections', price: 'From £75',  link: 'treatments/anti-wrinkle-injections.html', desc: 'Doctor-administered injections that smooth fine lines and wrinkles for a refreshed, natural-looking result — visible within days.' },
+      'fillers':       { name: 'Dermal Fillers',          price: 'From £170', link: 'treatments/dermal-fillers.html',          desc: 'Restore lost volume, define contours and soften deep lines with premium hyaluronic acid fillers tailored to your face.' },
+      'thread-lifts':  { name: 'Thread Lifts',            price: 'From £395', link: 'treatments/thread-lifts.html',            desc: 'A non-surgical lift using dissolvable PDO threads to reposition and tighten sagging skin with results that last over a year.' },
+      'prp-hair':      { name: 'PRP Hair Rejuvenation',   price: 'From £250', link: 'treatments/prp-hair-rejuvenation.html',   desc: 'Harness your own platelet-rich plasma to stimulate hair follicles, thicken existing hair and slow further thinning.' },
+      'joint-prp':     { name: 'Joint PRP Therapy',       price: 'From £350', link: 'treatments/joint-prp.html',              desc: 'Regenerative platelet-rich plasma injections that reduce joint pain and support natural healing of tendons and cartilage.' },
+      'mole-removal':  { name: 'Mole & Lump Removal',     price: 'From £50',  link: 'treatments/mole-lump-removal.html',      desc: 'Safe, quick removal of moles, cysts and skin lumps by GMC-registered doctors, with minimal scarring and fast recovery.' },
+      'weight-loss':   { name: 'Weight Loss Programmes',  price: 'From £50',  link: 'treatments/weight-loss.html',            desc: 'Doctor-supervised weight management using evidence-based medication (Mounjaro/Ozempic) with ongoing clinical support.' },
+      'iv-drip':       { name: 'IV Drip Therapy',         price: 'From £50',  link: 'treatments/iv-drip-therapy.html',        desc: 'Vitamin and nutrient IV infusions to boost energy, support immunity and enhance overall wellbeing — delivered by doctors.' },
+      'polynucleotides': { name: 'Polynucleotides',       price: 'From £250', link: 'treatments/polynucleotides.html',        desc: 'Advanced regenerative skin boosters that repair DNA-level damage, improve elasticity and restore a radiant, youthful glow.' },
+      'dimpleplasty':  { name: 'Dimpleplasty',            price: 'From £645', link: 'treatments/dimpleplasty.html',           desc: 'A subtle, natural-looking dimple creation performed by experienced doctors under local anaesthetic with minimal downtime.' },
+      'blood-tests':   { name: 'Private Blood Tests',     price: 'From £100', link: 'treatments/private-blood-tests.html',    desc: 'Comprehensive private blood panels with a doctor-led review to identify deficiencies and optimise your health.' }
+    };
+
+    var TOTAL_STEPS = 5;
+    var currentStep = 1;
+    var scores = {};
+    var ctaChoice = 'explore'; // default
+
+    var card       = document.getElementById('quizCard');
+    var results    = document.getElementById('quizResults');
+    var progressBar = document.getElementById('quizProgressBar');
+    var currentEl  = document.getElementById('quizCurrent');
+    var totalEl    = document.getElementById('quizTotal');
+    var backBtn    = document.getElementById('quizBack');
+    var navWrap    = document.getElementById('quizNav');
+    var stepCount  = document.getElementById('quizStepCount');
+    totalEl.textContent = TOTAL_STEPS;
+
+    function setProgress() {
+      var pct = (currentStep / TOTAL_STEPS) * 100;
+      progressBar.style.width = pct + '%';
+      currentEl.textContent = Math.min(currentStep, TOTAL_STEPS);
+    }
+
+    function showStep(n, back) {
+      // hide all question steps + results
+      card.querySelectorAll('[data-question]').forEach(function (el) { el.hidden = true; });
+      results.hidden = true;
+      var step = card.querySelector('[data-step="' + n + '"]');
+      step.hidden = false;
+      // re-trigger animation
+      step.classList.remove('back');
+      step.style.animation = 'none';
+      void step.offsetWidth;
+      step.style.animation = '';
+      if (back) step.classList.add('back');
+      setProgress();
+      backBtn.disabled = (n === 1);
+      navWrap.style.display = '';
+      stepCount.textContent = 'Step ' + n + ' / ' + TOTAL_STEPS;
+      // scroll card into comfortable view
+      step.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    /* Delegated click handler for all option buttons */
+    card.addEventListener('click', function (e) {
+      var btn = e.target.closest('.quiz-opt');
+      if (!btn) return;
+
+      // record scores
+      var raw = btn.getAttribute('data-scores');
+      if (raw) {
+        try {
+          var s = JSON.parse(raw);
+          Object.keys(s).forEach(function (k) {
+            scores[k] = (scores[k] || 0) + s[k];
+          });
+        } catch (err) { /* ignore */ }
+      }
+      // record CTA choice on step 5
+      var cta = btn.getAttribute('data-cta');
+      if (cta) ctaChoice = cta;
+
+      // advance
+      if (currentStep < TOTAL_STEPS) {
+        currentStep++;
+        showStep(currentStep);
+      } else {
+        finishQuiz();
+      }
+    });
+
+    backBtn.addEventListener('click', function () {
+      if (results.hidden === false) {
+        // coming back from results → go to step 5
+        results.hidden = true;
+        currentStep = TOTAL_STEPS;
+        showStep(currentStep, true);
+        return;
+      }
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep, true);
+      }
+    });
+
+    /* ----- Results ----- */
+    function finishQuiz() {
+      card.querySelectorAll('[data-question]').forEach(function (el) { el.hidden = true; });
+      navWrap.style.display = 'none';
+      progressBar.style.width = '100%';
+      currentEl.textContent = TOTAL_STEPS;
+
+      var ranked = Object.keys(scores)
+        .map(function (k) { return { key: k, score: scores[k] }; })
+        .filter(function (r) { return TREATMENTS[r.key]; })   // only treatments we know about
+        .sort(function (a, b) { return b.score - a.score; });
+
+      var top = ranked.slice(0, 2);
+      var primary = top[0];
+      var secondary = top[1];
+
+      // If somehow no scores (all "not sure"), default to a sensible pair
+      if (!primary) { primary = { key: 'iv-drip' }; secondary = { key: 'polynucleotides' }; }
+      if (!secondary || secondary.key === primary.key) {
+        secondary = pickFallback(primary.key, ranked);
+      }
+
+      results.innerHTML = buildResults(primary, secondary, ranked);
+      results.hidden = false;
+      results.style.animation = 'none';
+      void results.offsetWidth;
+      results.style.animation = '';
+
+      // wire buttons
+      var retake = document.getElementById('quizRetake');
+      if (retake) retake.addEventListener('click', resetQuiz);
+      var askAI = document.getElementById('quizAskAI');
+      if (askAI) askAI.addEventListener('click', openChatbot);
+
+      results.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function pickFallback(avoidKey, ranked) {
+      var order = ['anti-wrinkle', 'fillers', 'thread-lifts', 'prp-hair', 'polynucleotides', 'iv-drip', 'joint-prp', 'weight-loss', 'mole-removal', 'dimpleplasty', 'blood-tests'];
+      for (var i = 0; i < order.length; i++) {
+        if (order[i] !== avoidKey) {
+          // prefer one that actually scored
+          var hit = ranked.filter(function (r) { return r.key === order[i]; })[0];
+          if (hit) return hit;
+        }
+      }
+      return { key: order.filter(function (k) { return k !== avoidKey; })[0] };
+    }
+
+    function recCardHTML(key, isPrimary) {
+      var t = TREATMENTS[key];
+      if (!t) return '';
+      var bannerLabel = isPrimary ? 'Best match for you' : 'Also worth considering';
+      return '' +
+        '<div class="rec-card ' + (isPrimary ? 'primary' : '') + '">' +
+          '<div class="rec-banner ' + (isPrimary ? '' : 'secondary') + '">' +
+            '<span>' + bannerLabel + '</span>' +
+            (isPrimary ? '<span class="rec-badge">Top Pick</span>' : '') +
+          '</div>' +
+          '<div class="rec-body">' +
+            '<div class="rec-name">' + t.name + '</div>' +
+            '<span class="rec-price">' + t.price + '</span>' +
+            '<p class="rec-desc">' + t.desc + '</p>' +
+            '<div class="rec-actions">' +
+              '<a href="' + t.link + '" class="btn btn-teal">Learn more</a>' +
+              '<a href="' + TREATWELL + '" target="_blank" rel="noopener" class="btn btn-gold">Book consultation</a>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+    }
+
+    function buildResults(primary, secondary, ranked) {
+      var html = '<div class="quiz-results-header">' +
+        '<span class="section-label">Your results</span>' +
+        '<h2>Here are your top recommendations</h2>' +
+        '<p>Based on your answers, our doctors would suggest these treatments. Every plan is tailored during a consultation.</p>' +
+      '</div>';
+
+      html += recCardHTML(primary.key, true);
+      html += recCardHTML(secondary.key, false);
+
+      // CTA block depends on Q5 choice
+      html += '<div class="quiz-cta-block">' + ctaBlockHTML() + '</div>';
+
+      // footer actions
+      html += '<div class="quiz-footer-actions">' +
+        '<button class="quiz-back" id="quizRetake" style="border-color:var(--gold);color:var(--gold);">' +
+          '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>' +
+          'Retake quiz' +
+        '</button>' +
+        '<button class="btn btn-teal" id="quizAskAI">' +
+          '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
+          'Ask our AI' +
+        '</button>' +
+      '</div>';
+
+      html += '<p class="quiz-note">These suggestions are for guidance only and do not replace a medical consultation. Book a consultation for tailored, doctor-led advice.</p>';
+
+      return html;
+    }
+
+    function ctaBlockHTML() {
+      if (ctaChoice === 'book') {
+        return '<h3>Ready to book your consultation?</h3>' +
+          '<p>Secure your appointment with one of our GMC-registered doctors today.</p>' +
+          '<a href="' + TREATWELL + '" target="_blank" rel="noopener" class="btn btn-gold btn-block">Book Consultation Now</a>' +
+          '<a href="tel:01615317727" class="btn btn-teal btn-block" style="margin-top:0.5rem;">Call 0161 531 7727</a>';
+      }
+      if (ctaChoice === 'info') {
+        return '<h3>Want to learn more?</h3>' +
+          '<p>Browse our treatments or chat with our AI assistant to find out what suits you best.</p>' +
+          '<a href="index.html#services" class="btn btn-teal btn-block">Explore Treatments</a>' +
+          '<button class="btn btn-gold btn-block" id="quizAskAI" style="margin-top:0.5rem;">Ask Our AI Assistant</button>';
+      }
+      // explore
+      return '<h3>Got questions?</h3>' +
+        '<p>Our AI assistant can answer common questions and help you decide — or just keep exploring.</p>' +
+        '<button class="btn btn-gold btn-block" id="quizAskAI">Ask Our AI Assistant</button>' +
+        '<a href="index.html#faq" class="btn btn-teal btn-block" style="margin-top:0.5rem;">Read FAQs</a>';
+    }
+
+    function resetQuiz() {
+      scores = {};
+      ctaChoice = 'explore';
+      currentStep = 1;
+      showStep(1);
+    }
+
+    /* Open the chatbot widget (lives in a shadow DOM) */
+    function openChatbot() {
+      try {
+        var host = document.getElementById('altri-chatbot-host');
+        if (host && host.shadowRoot) {
+          var bubble = host.shadowRoot.querySelector('.bubble');
+          if (bubble) { bubble.click(); return; }
+        }
+      } catch (err) { /* fall through */ }
+      // fallback: scroll to bottom where bubble usually sits
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+
+    // init
+    setProgress();
+    stepCount.textContent = 'Step 1 / ' + TOTAL_STEPS;
+  })();
+  </script>
+
+  <script src="js/components.js"></script>
+  <script src="js/script.js"></script>
+  <script src="/assets/js/chatbot.js" defer></script>
+</body>
+</html>

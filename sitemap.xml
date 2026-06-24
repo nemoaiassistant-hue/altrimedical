@@ -134,6 +134,22 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Quiz -->
+  <url>
+    <loc>https://www.altrimedical.co.uk/quiz.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Gallery -->
+  <url>
+    <loc>https://www.altrimedical.co.uk/gallery.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Service Area Pages -->
   <url>
     <loc>https://www.altrimedical.co.uk/service-areas/sale.html</loc>
