@@ -347,6 +347,28 @@ h1, h2, h3, h4 {
   color: var(--gold);
 }
 
+.nav-whatsapp {
+  display: flex;
+  align-items: center;
+  color: #25D366;
+  transition: opacity var(--t-fast);
+}
+
+.nav-whatsapp:hover {
+  opacity: 0.8;
+}
+
+/* Mobile CTA WhatsApp */
+.mobile-cta-whatsapp {
+  background: #25D366;
+  color: var(--white);
+  flex: 1;
+}
+
+.mobile-cta-whatsapp:hover {
+  background: #1ebe57;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
