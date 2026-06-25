@@ -271,13 +271,14 @@
   }, 6000);
 
   function renderMd(text) {
-    // Simple markdown: bold, italic, links, bullet lists, line breaks
+    // Simple markdown: bold, italic, links, bullet lists, line breaks, plain URLs
     var html = text
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank" rel="noopener" style="color:#0d5c5c;text-decoration:underline">$1</a>')
+      .replace(/(^|\s)(https?:\/\/[^\s<]+)/g, '$1<a href="$2" target="_blank" rel="noopener" style="color:#0d5c5c;text-decoration:underline">$2</a>')
       .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
       .replace(/\*(.+?)\*/g, '<em>$1</em>')
-      .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank" style="color:#0d5c5c;text-decoration:underline">$1</a>')
-      .replace(/^- (.+)$/gm, '<span style="display:block;padding-left:12px;position:relative">• $1</span>')
+      .replace(/^- (.+)$/gm, '<span style="display:block;padding-left:12px">• $1</span>')
       .replace(/\n/g, '<br>');
     return html;
   }
