@@ -3,8 +3,8 @@
  * Adapted from the Cloud Hak template.
  *
  * CONFIG:
- * - WF_ID: 21 (Altri Medical Dograh workflow)
- * - API:   https://app.cloud-hak.com/api/demo
+ * - API:   https://app.cloud-hak.com/api/chat-direct (streaming, direct to GLM)
+ * - WF_ID: 21 (Altri Medical)
  * - Brand: teal (#0d5c5c) + gold (#c9a96a) + cream (#f5f0e8)
  *
  * DEPLOYMENT:
@@ -22,9 +22,9 @@
   if (window.__altriBot) return;
   window.__altriBot = true;
 
-  var runId = null;
   var sending = false;
-  var sessionStarted = false;
+  var messages = []; // Client-side message history
+  var streamingEl = null;
 
   // ===== Shadow DOM container =====
   var host = document.createElement('div');
@@ -72,7 +72,7 @@
   /* ===== CHAT PANEL ===== */\
   .panel {\
     position:fixed; bottom:0; right:0; width:100vw; height:100vh;\
-    background: #f5f0e8;  /* ALTRI BRAND: cream */\
+    background: #f5f0e8;\
     display:none; flex-direction:column;\
     pointer-events:auto; animation: panelUp 0.3s cubic-bezier(.2,.7,.2,1);\
   }\
@@ -91,11 +91,11 @@
   /* Header */\
   .header {\
     padding:16px 20px; display:flex; align-items:center; gap:12px;\
-    background: #0d5c5c; color:#fff; flex-shrink:0;  /* ALTRI BRAND: teal */\
+    background: #0d5c5c; color:#fff; flex-shrink:0;\
   }\
   .avatar {\
     width:42px; height:42px; border-radius:50%; flex-shrink:0;\
-    background: linear-gradient(135deg, #c9a96a, #e0c887);  /* ALTRI BRAND: gold */\
+    background: linear-gradient(135deg, #c9a96a, #e0c887);\
     display:flex; align-items:center; justify-content:center;\
   }\
   .avatar svg { width:22px; height:22px; }\
@@ -114,7 +114,7 @@
   .chat {\
     flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch;\
     padding:18px 16px; display:flex; flex-direction:column; gap:10px;\
-    background: #f5f0e8;  /* ALTRI BRAND: cream */\
+    background: #f5f0e8;\
   }\
   \
   .welcome { text-align:center; padding:8px 12px 16px; border-bottom:1px solid rgba(13,92,92,0.06); margin-bottom:8px; }\
@@ -242,7 +242,7 @@
     document.body.style.overflow = 'hidden';
     var notif = bubble.querySelector('.notif');
     if (notif) notif.style.display = 'none';
-    if (!sessionStarted) { sessionStarted = true; startSession(); }
+    if (!quickShown) setTimeout(showQuick, 300);
     setTimeout(function() { input.focus(); }, 300);
   }
 
@@ -276,6 +276,7 @@
     div.textContent = text;
     chat.appendChild(div);
     chat.scrollTop = chat.scrollHeight;
+    return div;
   }
 
   function showTyping() {
@@ -288,15 +289,6 @@
   function hideTyping() {
     var el = root.getElementById('typing-indicator');
     if (el) el.remove();
-  }
-
-  function renderMessages(messages) {
-    var existing = chat.querySelectorAll('.msg, .quick-row, .typing');
-    existing.forEach(function(el) { el.remove(); });
-    for (var i = 0; i < messages.length; i++) {
-      var m = messages[i];
-      if (m.content && m.content.trim()) addMsg(m.role === 'user' ? 'user' : 'bot', m.content);
-    }
   }
 
   function showQuick() {
@@ -316,79 +308,99 @@
     if (el) el.remove(); quickShown = false;
   }
 
-  function startSession() {
-    showTyping();
-    fetch(API + '?action=start&workflow_id=' + WF_ID)
-      .then(function(r) { return r.json(); })
-      .then(function(session) {
-        if (session.error) throw new Error(session.error);
-        runId = session.run_id;
-        hideTyping();
-        if (session.messages && session.messages.length > 0) renderMessages(session.messages);
-        setTimeout(showQuick, 500);
-      })
-      .catch(function() {
-        hideTyping();
-        addMsg('bot', 'Sorry, I am having trouble connecting. Please try again in a moment.');
-      });
-  }
-
+  // ===== STREAMING SEND — tokens appear as they arrive =====
   function sendMessage() {
     if (sending) return;
     var text = input.value.trim();
-    if (!text || !runId) return;
+    if (!text) return;
     sending = true; sendBtn.disabled = true;
     input.value = ''; input.style.height = 'auto';
     hideQuick(); addMsg('user', text); showTyping();
 
-    fetch(API + '?action=send&workflow_id=' + WF_ID + '&run_id=' + runId + '&message=' + encodeURIComponent(text))
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        hideTyping();
-        if (data.error) {
-          if (data.error.indexOf('token') !== -1 || data.error.indexOf('session') !== -1) {
-            return fetch(API + '?action=start&workflow_id=' + WF_ID)
-              .then(function(r) { return r.json(); })
-              .then(function(ns) {
-                if (ns.run_id) {
-                  runId = ns.run_id;
-                  return fetch(API + '?action=send&workflow_id=' + WF_ID + '&run_id=' + runId + '&message=' + encodeURIComponent(text))
-                    .then(function(r) { return r.json(); });
-                }
-                throw new Error('Session expired');
-              });
-          }
-          throw new Error(data.error);
-        }
-        return data;
-      })
-      .then(function(data) {
-        if (!data.error) renderMessages(data.messages);
-        // Don't re-show quick replies after first message
-      })
-      .catch(function() {
-        hideTyping();
-        addMsg('bot', 'Connection issue — please try again.');
-      });
+    // Add user message to history
+    messages.push({ role: 'user', content: text });
 
-    sending = false; sendBtn.disabled = false;
-    setTimeout(function() { input.focus(); }, 100);
+    // Stream response
+    fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: messages, workflow_id: WF_ID }),
+    }).then(function(response) {
+      hideTyping();
+
+      // Create bot message element for streaming
+      var botEl = addMsg('bot', '');
+      streamingEl = botEl;
+      var fullText = '';
+
+      if (!response.ok) throw new Error('API error');
+
+      var reader = response.body.getReader();
+      var decoder = new TextDecoder();
+      var buffer = '';
+
+      function readChunk() {
+        return reader.read().then(function(result) {
+          if (result.done) {
+            // Finalize
+            streamingEl = null;
+            if (fullText) {
+              messages.push({ role: 'assistant', content: fullText });
+            }
+            sending = false; sendBtn.disabled = false;
+            setTimeout(function() { input.focus(); }, 100);
+            return;
+          }
+
+          buffer += decoder.decode(result.value, { stream: true });
+          var lines = buffer.split('\n');
+          buffer = lines.pop() || '';
+
+          for (var i = 0; i < lines.length; i++) {
+            var line = lines[i].trim();
+            if (!line || !line.startsWith('data: ')) continue;
+            var data = line.slice(6);
+            if (data === '[DONE]') continue;
+            try {
+              var parsed = JSON.parse(data);
+              if (parsed.content) {
+                fullText += parsed.content;
+                if (streamingEl) streamingEl.textContent = fullText;
+                chat.scrollTop = chat.scrollHeight;
+              }
+            } catch (_) {}
+          }
+
+          return readChunk(); // Keep reading
+        });
+      }
+
+      return readChunk();
+    }).catch(function() {
+      hideTyping();
+      if (!streamingEl || !streamingEl.textContent) {
+        addMsg('bot', 'Connection issue — please try again.');
+      }
+      streamingEl = null;
+      // Remove failed user message from history
+      if (messages.length && messages[messages.length - 1].role === 'user') {
+        messages.pop();
+      }
+      sending = false; sendBtn.disabled = false;
+    });
   }
 
   if (window.visualViewport) {
     var vw = window.visualViewport;
     var onResize = function() {
       if (panel.classList.contains('active')) {
-        // Use viewport height (shrinks when keyboard opens)
         var h = vw.height;
-        // Position panel from the top of visible area
         if (window.innerWidth <= 600) {
           panel.style.height = h + 'px';
           panel.style.maxHeight = h + 'px';
           panel.style.bottom = 'auto';
           panel.style.top = vw.offsetTop + 'px';
         }
-        // Keep input visible above keyboard
         chat.scrollTop = chat.scrollHeight;
       }
     };
