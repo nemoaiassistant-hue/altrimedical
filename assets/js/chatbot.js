@@ -278,8 +278,9 @@
       .replace(/(^|\s)(https?:\/\/[^\s<]+)/g, '$1<a href="$2" target="_blank" rel="noopener" style="color:#0d5c5c;text-decoration:underline">$2</a>')
       .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
       .replace(/\*(.+?)\*/g, '<em>$1</em>')
-      .replace(/^- (.+)$/gm, '<span style="display:block;padding-left:12px">• $1</span>')
-      .replace(/\n/g, '<br>');
+      .replace(/^- (.+)$/gm, '<span style="display:block;padding-left:12px;margin:0">• $1</span>')
+      .replace(/\n{2,}/g, '<br>')
+      .replace(/\n/g, '');
     return html;
   }
 
